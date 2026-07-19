@@ -1,28 +1,6 @@
-html,
-body,
-#map {
-  height: 100%;
-  margin: 0;
-}
-body {
-  display: flex;
-  flex-direction: column;
-  font-family: Arial;
-}
-#top {
-  display: flex;
-  gap: 8px;
-  padding: 8px;
-  flex-wrap: wrap;
-}
-#status {
-  padding: 8px;
-  background: #222;
-  color: #fff;
-}
-#map {
-  flex: 1;
-}
-button {
-  padding: 10px;
-}
+html,body,#map{height:100%;margin:0}
+body{display:flex;flex-direction:column;font-family:Arial}
+#top{display:flex;gap:8px;padding:8px;flex-wrap:wrap}
+#status{padding:8px;background:#222;color:#fff}
+#map{flex:1}
+button{padding:10px}
