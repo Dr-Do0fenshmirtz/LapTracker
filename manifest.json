@@ -1,0 +1,6 @@
+{
+  "name": "Lap Counter",
+  "short_name": "LapCounter",
+  "start_url": ".",
+  "display": "standalone"
+}
