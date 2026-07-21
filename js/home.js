@@ -1,0 +1,1 @@
+const r=JSON.parse(localStorage.getItem('savedRoute'));routeStatus.textContent=r?`✓ Route Saved (${r.pointCount} pts)`: 'No saved route';countBtn.disabled=!r;recordBtn.onclick=()=>location='record.html';countBtn.onclick=()=>location='count.html';
