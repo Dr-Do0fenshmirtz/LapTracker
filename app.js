@@ -79,35 +79,45 @@ function request(m) {
   });
 }
 function begin(m) {
-  if (watch !== null) navigator.geolocation.clearWatch(watch);
-  mode = m;
-  pending = null;
-  first = true;
-  ensureMap();
-  clearLayers();
-  if (m == "record") {
-    points = [];
-    $("status").textContent = "Recording track…";
-    $("liveStats").hidden = true;
-  } else {
-    track = load(TK, null);
-    if (!track) {
-      screen("home");
-      $("message").textContent = "Record a track first.";
-      return;
+    if (watch !== null) {
+        navigator.geolocation.clearWatch(watch);
     }
-    build();
-    drawTrack();
-    $("status").textContent = "Following saved track…";
-    $("liveStats").hidden = false;
-    live();
-  }
-  screen(m == "record" ? "map" : "count");
-  watch = navigator.geolocation.watchPosition(pos, err, {
-    enableHighAccuracy: true,
-    maximumAge: 0,
-    timeout: 15000,
-  });
+
+    mode = m;
+    pending = null;
+    first = true;
+
+    ensureMap();
+    clearLayers();
+
+    if (m === "record") {
+        points = [];
+        $("status").textContent = "Recording track…";
+    } else {
+        track = load(TK, null);
+
+        if (!track) {
+            screen("home");
+            $("message").textContent = "Record a track first.";
+            return;
+        }
+
+        build();
+        drawTrack();
+        live();
+    }
+
+    screen(m === "record" ? "map" : "count");
+
+    watch = navigator.geolocation.watchPosition(
+        pos,
+        err,
+        {
+            enableHighAccuracy: true,
+            maximumAge: 0,
+            timeout: 15000
+        }
+    );
 }
 function clearLayers() {
   [marker, line].forEach((x) => {
