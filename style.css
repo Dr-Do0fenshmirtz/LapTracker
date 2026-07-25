@@ -10,3 +10,10 @@
 .counting-progress{margin-top:0}
 .count-stop{width:100%;height:56px;margin-top:14px;border:0;border-radius:18px;background:#171717;color:#fff;font-size:17px;font-weight:700}
 .count-screen[hidden]{display:none}
+
+/* Progress card layout update */
+.progress .progress-values{display:flex;justify-content:space-between;align-items:flex-end;gap:18px}
+.progress .progress-side{display:grid;gap:5px}
+.progress .progress-side strong{font-size:32px;line-height:1}
+.progress .progress-percent{text-align:right}
+.progress .progress-context-action{width:100%;height:44px;margin-top:18px;border:1px solid #e1e1dd;border-radius:14px;background:#f7f7f5;color:#171717;font-size:15px;font-weight:650}
